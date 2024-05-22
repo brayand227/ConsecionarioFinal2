@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-public class AmdinController {
+public class AdminController {
 
     @FXML
     private ResourceBundle resources;
