@@ -1,0 +1,12 @@
+.white-background {
+    -fx-background-color: #FFFFFF; /* Usar notación completa para el color blanco */
+}
+
+.transparent {
+    -fx-background-color: rgba(0, 0, 0, 0); /* Correcto */
+}
+
+.round-layout {
+    -fx-border-radius: 50px; /* Añadir unidad de medida */
+    -fx-border-color: #D7D7D7; /* Correcto */
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ImageInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="619.0" style="-fx-background-color: #87BDC4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.co.VentaController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="36.0" layoutY="251.0" prefHeight="23.0" prefWidth="237.0" text="REGISTRO DE VENTA" textFill="#ab3232">
+               <font>
+                  <Font name="Baskerville Old Face" size="19.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="26.0" layoutY="30.0" prefHeight="210.0" prefWidth="220.0">
+               <effect>
+                  <ImageInput>
+                     <source>
+                        <Image url="file:/C:/Users/USER/Downloads/carroLogo__1_-removebg-preview.png" />
+                     </source>
+                  </ImageInput>
+               </effect>
+            </AnchorPane>
+            <Label layoutX="274.0" layoutY="43.0" prefHeight="18.0" prefWidth="53.0" text="TIPO" />
+            <Label layoutX="274.0" layoutY="76.0" prefHeight="18.0" prefWidth="53.0" text="PLACA" />
+            <Label layoutX="274.0" layoutY="116.0" prefHeight="18.0" prefWidth="53.0" text="VALOR" />
+            <ComboBox fx:id="cbTipo" layoutX="362.0" layoutY="39.0" prefWidth="150.0" promptText="TIPO" />
+            <TextField fx:id="txPlaca" layoutX="362.0" layoutY="81.0" promptText="PLACA" />
+            <TextField fx:id="txPrecio" layoutX="362.0" layoutY="112.0" promptText="VALOR" />
+            <Button fx:id="btRegresar" layoutX="296.0" layoutY="250.0" mnemonicParsing="false" onAction="#Regresar" text="REGRESAR" />
+            <Button fx:id="btSiguiente" layoutX="428.0" layoutY="250.0" mnemonicParsing="false" onAction="#Siguiente" text="SIGUIENTE" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

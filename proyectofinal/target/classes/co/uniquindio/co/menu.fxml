@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ImageInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="654.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.co.MenuController">
+   <children>
+      <AnchorPane prefHeight="350.0" prefWidth="600.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="300.0" stylesheets="@../../../../../RepositorioYoutube/EmployeeManagementSystem/employeeManagementSystem/build/classes/employeemanagementsystem/loginDesign.css">
+               <children>
+                  <Label layoutX="7.0" layoutY="211.0" text="SISTEMA DE GESTION DE EMPLEADOS" textFill="#2c6b4d">
+                     <font>
+                        <Font name="Tahoma" size="17.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="69.0" layoutY="14.0" prefHeight="173.0" prefWidth="180.0">
+                     <effect>
+                        <ImageInput>
+                           <source>
+                              <Image url="file:/C:/Users/USER/Downloads/USUARIOS%20(1).png" />
+                           </source>
+                        </ImageInput>
+                     </effect>
+                  </AnchorPane>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </AnchorPane>
+            <AnchorPane layoutX="314.0" layoutY="45.0" prefHeight="400.0" prefWidth="300.0">
+               <children>
+                  <Label layoutX="35.0" layoutY="57.0" text="BIENVENIDO ADMIN" textFill="#2c6b4d">
+                     <font>
+                        <Font name="Tahoma" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="14.0" layoutY="103.0" prefHeight="20.0" prefWidth="250.0" promptText="Usuario" />
+                  <PasswordField layoutX="14.0" layoutY="145.0" prefHeight="20.0" prefWidth="250.0" promptText="contraseña" />
+                  <Button fx:id="btAcceso" layoutX="14.0" layoutY="200.0" minHeight="20.0" mnemonicParsing="false" onAction="#Acceso" prefWidth="250.0" text="ACCESO" textFill="#2c6b4d" />
+                  <Button fx:id="btVolver" layoutX="14.0" layoutY="236.0" minHeight="20.0" mnemonicParsing="false" onAction="#Volver" prefWidth="250.0" text="VOLVER " textFill="#2c6b4d" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

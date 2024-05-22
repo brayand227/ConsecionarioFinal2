@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="313.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.co.CarrosController">
+   <children>
+      <Label layoutX="40.0" layoutY="26.0" prefHeight="32.0" prefWidth="99.0" text="MARCA" />
+      <Label layoutX="40.0" layoutY="74.0" prefHeight="32.0" prefWidth="99.0" text="MODELO" />
+      <Label layoutX="40.0" layoutY="125.0" prefHeight="32.0" prefWidth="99.0" text="PRECIO" />
+      <TextField fx:id="txMarca" layoutX="114.0" layoutY="30.0" promptText="MARCA" />
+      <TextField fx:id="txModelo" layoutX="114.0" layoutY="78.0" promptText="MODELO" />
+      <TextField fx:id="txPrecio" layoutX="114.0" layoutY="129.0" promptText="PRECIO" />
+      <Button fx:id="btSiguiente" layoutX="163.0" layoutY="187.0" mnemonicParsing="false" onAction="#Siguiente" text="SIGUIENTE" />
+   </children>
+</Pane>
