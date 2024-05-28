@@ -6,13 +6,23 @@ public abstract class Persona {
 
     private String nombre;
     private String apellido;
-
     private LocalDate date;
+    private User user;
 
-    public Persona(String nombre, String apellido, LocalDate date) {
+    public Persona(String nombre, String apellido, LocalDate date, User user) {
+
+        this.user = user;
         this.nombre = nombre;
         this.apellido = apellido;
         this.date = date;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getNombre() {
@@ -27,11 +37,6 @@ public abstract class Persona {
         return apellido;
     }
 
-    @Override
-    public String toString() {
-        return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", date=" + date + "]";
-    }
-
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
@@ -44,4 +49,8 @@ public abstract class Persona {
         this.date = date;
     }
 
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", date=" + date + "]";
+    }
 }

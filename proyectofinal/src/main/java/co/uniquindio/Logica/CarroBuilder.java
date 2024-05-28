@@ -12,7 +12,7 @@ public class CarroBuilder extends VehiculoBuilder<CarroBuilder> {
         Carro carro = new Carro();
         carro.setModelo(modelo);
         carro.setMarca(marca);
-
+        carro.setPlaca(marca);
         carro.setValor(valor);
         return carro;
     }

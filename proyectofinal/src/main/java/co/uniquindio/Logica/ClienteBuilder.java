@@ -6,10 +6,16 @@ public class ClienteBuilder {
     private String nombre;
     private String apellido;
     private LocalDate date;
+    private User user;
 
     private String id;
 
     public ClienteBuilder() {
+    }
+
+    public ClienteBuilder user(User user) {
+        this.user = user;
+        return this;
     }
 
     public ClienteBuilder nombre(String nombre) {
@@ -33,7 +39,7 @@ public class ClienteBuilder {
     }
 
     public Cliente build() {
-        return new Cliente(nombre, apellido, date, id);
+        return new Cliente(nombre, apellido, date, user, id);
 
     }
 

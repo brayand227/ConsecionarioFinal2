@@ -6,9 +6,14 @@ public abstract class VehiculoBuilder<T extends VehiculoBuilder<T>> {
     protected String tipo;
     protected String marca;
     protected String modelo;
+    protected String placa;
 
     public String getTipo() {
         return tipo;
+    }
+
+    public String getPlaca() {
+        return placa;
     }
 
     public String getMarca() {
@@ -25,6 +30,11 @@ public abstract class VehiculoBuilder<T extends VehiculoBuilder<T>> {
 
     public T Valor(double valor) {
         this.valor = valor;
+        return self();
+    }
+
+    public T Placa(String placa) {
+        this.placa = placa;
         return self();
     }
 

@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import co.uniquindio.Logica.Cliente;
+import co.uniquindio.Logica.Consecionario;
 import co.uniquindio.Logica.ImageData;
 import co.uniquindio.Logica.Vehiculo;
 import co.uniquindio.Logica.VehiculoFactory;
@@ -23,7 +23,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class CamionetaController {
-    private static PrincipalVentanaController principalVentanaController;
 
     @FXML
     private ResourceBundle resources;
@@ -54,9 +53,7 @@ public class CamionetaController {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("carro.fxml"));
                     Parent root = loader.load();
-
                     Scene scene = new Scene(root);
-
                     Stage stage = new Stage();
                     stage.setScene(scene);
                     stage.setTitle("INFORMACION VEHICULO");
@@ -77,25 +74,35 @@ public class CamionetaController {
                     Label precioLabel = new Label("Precio: " + precio);
                     Button comprarButton = new Button("Comprar");
 
+                    double pre = Double.parseDouble(precio);
+
                     comprarButton.setOnAction(e -> {
-                        // Acción al presionar el botón de comprar
-                        System.out.println("Compra realizada para el vehículo: " + marca + " " + modelo);
+                        RegistrarseController registrarseController = RegistrarseController.getRegistrarseController();
+                        Cliente cliente = registrarseController.getCliente();
+                        VehiculoFactory vehiculoFactory = new VehiculoFactory();
+                        Vehiculo vehiculo = vehiculoFactory.crearVehiculoBuilder("camioneta")
+                                .Marca(marca)
+                                .Modelo(modelo)
+                                .Valor(pre)
+                                .build();
+                        cliente.AgregarvVehiculo(vehiculo);
+
+                        System.out.print(cliente.getVehiculoBuilders().size());
                     });
 
                     VBox imageBox = new VBox(imageView, marcaLabel, modeloLabel, precioLabel, comprarButton);
                     imagenesContainer.getChildren().add(imageBox);
 
                     // Añadir la imagen y su información al estado de la aplicación
-                    AppState.getInstance()
-                            .addImageData(new ImageData(file.toURI().toString(), marca, modelo, precio));
+                    ImageData imageData = new ImageData(file.toURI().toString(), marca, modelo, precio);
+                    imageData.setComprarButton(comprarButton);
+                    AppState.getInstance().addImageData(imageData);
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         }
-
     }
 
     @FXML
@@ -111,8 +118,28 @@ public class CamionetaController {
             Label marcaLabel = new Label("Marca: " + data.getMarca());
             Label modeloLabel = new Label("Modelo: " + data.getModelo());
             Label precioLabel = new Label("Precio: " + data.getPrecio());
+            Button comprarButton = data.getComprarButton();
+            if (comprarButton == null) {
+                comprarButton = new Button("Comprar");
+                data.setComprarButton(comprarButton);
+            }
+            comprarButton.setOnAction(e -> {
+                RegistrarseController registrarseController = RegistrarseController.getRegistrarseController();
+                Cliente cliente = registrarseController.getCliente();
+                System.out.print(cliente.getNombre());
+                VehiculoFactory vehiculoFactory = new VehiculoFactory();
+                Vehiculo vehiculo = vehiculoFactory.crearVehiculoBuilder("camioneta")
+                        .Marca(data.getMarca())
+                        .Modelo(data.getModelo())
+                        .Valor(Double.parseDouble(data.getPrecio()))
+                        .build();
+                cliente.AgregarvVehiculo(vehiculo);
 
-            VBox imageBox = new VBox(imageView, marcaLabel, modeloLabel, precioLabel);
+                System.out.print(cliente.getNombre());
+                System.out.println(cliente.getVehiculoBuilders().size());
+            });
+
+            VBox imageBox = new VBox(imageView, marcaLabel, modeloLabel, precioLabel, comprarButton);
             imagenesContainer.getChildren().add(imageBox);
         }
     }

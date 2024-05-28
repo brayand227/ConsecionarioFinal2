@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="503.0" prefWidth="601.0" style="-fx-background-color: #77E6F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.co.LoginClienteController">
+   <children>
+      <Label alignment="CENTER" layoutX="122.0" layoutY="21.0" prefHeight="48.0" prefWidth="343.0" text="REGISTRO DE CLIENTE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="189.0" fitWidth="195.0" layoutX="41.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@USER-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="209.0" layoutY="110.0" prefHeight="27.0" prefWidth="103.0" text="USUARIO">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="209.0" layoutY="150.0" prefHeight="27.0" prefWidth="117.0" text="CONTRASEÑA">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="215.0" layoutY="195.0" prefHeight="27.0" prefWidth="131.0" text="CONFIRMACION">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TxUser" layoutX="364.0" layoutY="111.0" prefHeight="25.0" prefWidth="173.0" promptText="USER" style="-fx-background-color: #77E6F4;" styleClass="round-layout" stylesheets="@border.css" />
+      <PasswordField fx:id="txPassword" layoutX="364.0" layoutY="151.0" prefHeight="25.0" prefWidth="173.0" promptText="PASSWORD" style="-fx-background-color: #77E6F4;" styleClass="round-layout" stylesheets="@border.css" />
+      <PasswordField fx:id="TxPassword1" layoutX="370.0" layoutY="195.0" prefHeight="25.0" prefWidth="173.0" promptText="PASSWORD" style="-fx-background-color: #77E6F4;" styleClass="round-layout" stylesheets="@border.css" />
+      <Button fx:id="BtVolver" layoutX="74.0" layoutY="337.0" mnemonicParsing="false" onAction="#Volver" prefHeight="48.0" prefWidth="141.0" style="-fx-background-color: #77E6F4;" styleClass="round-layout" stylesheets="@border.css" text="VOLVER ">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="BtLogin" layoutX="276.0" layoutY="337.0" mnemonicParsing="false" onAction="#login" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #77E6F4;" styleClass="round-layout" stylesheets="@border.css" text="LOGIN">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

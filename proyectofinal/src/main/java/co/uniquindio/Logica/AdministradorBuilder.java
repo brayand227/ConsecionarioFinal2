@@ -7,9 +7,19 @@ public class AdministradorBuilder {
     private String apellido;
     private LocalDate date;
     private User user;
+
     private String id;
 
     public AdministradorBuilder() {
+
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
 
     }
 
@@ -52,13 +62,13 @@ public class AdministradorBuilder {
         return this;
     }
 
-    public AdministradorBuilder user(User user) {
-        this.user = user;
+    public AdministradorBuilder id(String id) {
+        this.id = id;
         return this;
     }
 
-    public AdministradorBuilder id(String id) {
-        this.id = id;
+    public AdministradorBuilder user(User user) {
+        this.user = user;
         return this;
     }
 

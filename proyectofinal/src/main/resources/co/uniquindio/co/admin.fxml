@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="482.0" maxWidth="684.0" minHeight="400.0" minWidth="600.0" prefHeight="482.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.co.AmdinController">
+<AnchorPane maxHeight="482.0" maxWidth="684.0" minHeight="400.0" minWidth="600.0" prefHeight="482.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.uniquindio.co.AdminController">
    <children>
       <SplitPane layoutY="-4.0" maxHeight="493.0" maxWidth="684.0" prefHeight="493.0" prefWidth="684.0">
         <items>
@@ -48,12 +48,33 @@
                   <TextField fx:id="TxNombre" layoutX="366.0" layoutY="43.0" prefHeight="27.0" prefWidth="178.0" promptText="NOMBRE" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" />
                   <TextField fx:id="TxApellido" layoutX="366.0" layoutY="95.0" prefHeight="27.0" prefWidth="177.0" promptText="APELLIDO" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" />
                   <DatePicker fx:id="DatePicker" layoutX="366.0" layoutY="138.0" promptText="FECHA" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" />
-                  <Button fx:id="btSiguiente" layoutX="258.0" layoutY="222.0" mnemonicParsing="false" onAction="#Siguiente" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" text="SIGUIENTE">
+                  <Button fx:id="btSiguiente" layoutX="258.0" layoutY="288.0" mnemonicParsing="false" onAction="#Siguiente" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" text="SIGUIENTE">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btVolver" layoutX="401.0" layoutY="222.0" mnemonicParsing="false" onAction="#Volver" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" text="VOLVER">
+                  <Button fx:id="btVolver" layoutX="409.0" layoutY="288.0" mnemonicParsing="false" onAction="#Volver" prefHeight="34.0" prefWidth="123.0" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" text="VOLVER">
+                     <font>
+                        <Font name="Bell MT Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="268.0" layoutY="196.0" prefHeight="18.0" prefWidth="103.0" text="ID">
+                     <font>
+                        <Font name="Bell MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="TxCedula" layoutX="365.0" layoutY="192.0" prefHeight="27.0" prefWidth="177.0" promptText="CEDULA" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" />
+                  <Label layoutX="268.0" layoutY="244.0" prefHeight="18.0" prefWidth="103.0">
+                     <font>
+                        <Font name="Bell MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="268.0" layoutY="234.0" prefHeight="18.0" prefWidth="103.0">
+                     <font>
+                        <Font name="Bell MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btEliminarAdmin" layoutX="59.0" layoutY="288.0" mnemonicParsing="false" onAction="#eliminarAdmin" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: #B3E5EB; -fx-border-color: #373737;" text="ELIMINAR ADMIN">
                      <font>
                         <Font name="Bell MT Bold" size="16.0" />
                      </font>

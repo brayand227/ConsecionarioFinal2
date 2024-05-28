@@ -1,9 +1,11 @@
 package co.uniquindio.co;
 
-import javafx.scene.Node;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.scene.Node;
+import co.uniquindio.Logica.Consecionario;
+import co.uniquindio.Logica.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,29 +36,34 @@ public class UserController {
     @FXML
     private TextField txUser;
 
+    private String user;
+    private String contraseña;
+    private User usuario;
+
     @FXML
-    void Iniciar(ActionEvent event) {
+    void Iniciar(ActionEvent event) throws IOException {
+        user = txUser.getText();
+        contraseña = Password.getText();
+        usuario = new User(user, contraseña);
+        if (Consecionario.validarUser(usuario)) {
+            Parent root = FXMLLoader.load(getClass().getResource("menuUser.fxml"));
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("MENU");
+            stage.show();
+        }
 
     }
 
     @FXML
-    void Volver(ActionEvent event) throws IOException {
-        /* App.setRoot("registrarUsuario"); */
-        Parent root = FXMLLoader.load(getClass().getResource("inicio.fxml"));
-        Scene scene = new Scene(root);
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        stage.setScene(scene);
-
-        stage.setTitle("REGISTRAR USUARIO");
-
-        stage.show();
+    void Volver(ActionEvent event) {
 
     }
 
     @FXML
     void initialize() {
+
     }
 
 }

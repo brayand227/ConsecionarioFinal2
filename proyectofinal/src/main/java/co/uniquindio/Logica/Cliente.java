@@ -8,29 +8,26 @@ import java.util.Map;
 public class Cliente extends Persona {
     private String id;
 
-    private Map<String, Vehiculo> vehiculoBuilders;
+    private ArrayList<Vehiculo> vehiculoBuilders;
 
-    public Map<String, Vehiculo> getVehiculoBuilders() {
+    public ArrayList<Vehiculo> getVehiculoBuilders() {
         return vehiculoBuilders;
     }
 
-    public Cliente(String nombre, String apellido, LocalDate date, String id) {
-        super(nombre, apellido, date);
+    public Cliente(String nombre, String apellido, LocalDate date, User user, String id) {
+        super(nombre, apellido, date, user);
 
         this.id = id;
-        vehiculoBuilders = new HashMap<>();
+        vehiculoBuilders = new ArrayList<>();
     }
 
     public void AgregarvVehiculo(Vehiculo vehiculoBuilder) {
+        vehiculoBuilders.add(vehiculoBuilder);
 
     }
 
     public boolean validarVehiculo(String placa) {
         boolean centinela = false;
-
-        if (vehiculoBuilders.containsKey(placa)) {
-            centinela = true;
-        }
 
         return centinela;
     }
@@ -45,11 +42,6 @@ public class Cliente extends Persona {
 
     public static ClienteBuilder builder() {
         return new ClienteBuilder();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString() + "Cliente [cargo=" + "ID=" + id + "]";
     }
 
 }
